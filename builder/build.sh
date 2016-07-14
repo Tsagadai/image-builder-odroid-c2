@@ -82,11 +82,11 @@ tar -czf $IMAGE_ROOTFS_PATH -C $BUILD_PATH .
 
 #FIXME: use latest upstream u-boot files from hardkernel
 # download current bootloader/u-boot images from hardkernel
-wget -q -O - http://dn.odroid.com/S905/BootLoader/ODROID-C2/c2_bootloader.tar.gz | tar -C /tmp -xzvf -
-cp /tmp/c2_bootloader/bl1.bin.hardkernel .
-cp /tmp/c2_bootloader/u-boot.bin .
-cp /tmp/c2_bootloader/sd_fusing.sh .
-rm -rf /tmp/c2_bootloader/
+wget -q -O - http://dn.odroid.com/S905/BootLoader/ODROID-C2/c2_boot_ubuntu_release.tar.gz | tar -C /tmp -xzvf -
+cp /tmp/c2_boot_ubuntu_release/bl1.bin.hardkernel .
+cp /tmp/c2_boot_ubuntu_release/u-boot.bin .
+cp /tmp/c2_boot_ubuntu_release/sd_fusing.sh .
+rm -rf /tmp/c2_boot_ubuntu_release/
 
 guestfish <<EOF
 # create new image disk
